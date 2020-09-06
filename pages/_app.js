@@ -1,4 +1,4 @@
-import { ChakraProvider, theme } from "@chakra-ui/core";
+import { ChakraProvider, theme, Box } from "@chakra-ui/core";
 import { merge } from "@chakra-ui/utils";
 import Nav from "../components/Nav";
 
@@ -16,7 +16,15 @@ function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider resetCSS theme={customTheme}>
       <Nav />
-      <Component {...pageProps} />
+      <Box
+        d="flex"
+        margin="auto"
+        justifyContent="center"
+        alignItems="center"
+        height="90vh"
+      >
+        <Component {...pageProps} />
+      </Box>
     </ChakraProvider>
   );
 }

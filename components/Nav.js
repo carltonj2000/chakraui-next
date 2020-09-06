@@ -5,7 +5,6 @@ import NavButton from "./NavButtons";
 
 function LightDark({ v = "block", p = "static", d = "block" }) {
   const { colorMode, toggleColorMode } = useColorMode();
-  console.log(v);
   return (
     <Button onClick={toggleColorMode} visibility={v} pos={p} d={d}>
       Select {colorMode === "light" ? "Dark" : "Light"} Mode
