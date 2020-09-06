@@ -1,13 +1,20 @@
 import { Box, Button, useColorMode, useColorModeValue } from "@chakra-ui/core";
-import { AddIcon } from "@chakra-ui/icons";
+import { AddIcon, SunIcon, MoonIcon } from "@chakra-ui/icons";
 
 import NavButton from "./NavButtons";
 
 function LightDark({ v = "block", p = "static", d = "block" }) {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Button onClick={toggleColorMode} visibility={v} pos={p} d={d}>
-      Select {colorMode === "light" ? "Dark" : "Light"} Mode
+    <Button
+      onClick={toggleColorMode}
+      visibility={v}
+      pos={p}
+      d={d}
+      variant="solid"
+      rounded="full"
+    >
+      {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
     </Button>
   );
 }
